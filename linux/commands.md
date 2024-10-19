@@ -334,3 +334,98 @@
 ### Mounting at Boot Time
 
 - To mount a filesystem at boot time, Linux systems keep a permanent list of filesystems and options in `/etc/fstab`.
+
+## Files
+
+- Every file has permissions: read, write, and execute.
+- `ls -l`: Display permissions.
+- Permissions can be divided into four sections:  
+  `-rw-r--r--`: type (first `-`, a regular file here), user permissions (`rw-`), group permissions (`r--`), other permissions (`r--`).
+
+| Symbol | Description                               |
+| ------ | ----------------------------------------- |
+| `r`    | Read (4)                                  |
+| `w`    | Write (2)                                 |
+| `x`    | Execute (1)                               |
+| `-`    | None (0)                                  |
+| `s`    | Setuid/setgid (admin privileges required) |
+
+- `chmod`: Modify permissions.
+- `rw-r--r--` = `110100100` = `644`.
+
+### Examples
+
+1. To display file permissions:
+
+   ```sh
+   ls -l
+   ```
+
+2. To modify file permissions:
+   ```sh
+   chmod 644 filename
+   ```
+
+## Links
+
+- Symbolic link: A file that points to another file or directory.
+- To create a symbolic link: `ln -s target linkname`.
+
+| Command                 | Description            |
+| ----------------------- | ---------------------- |
+| `ln -s target linkname` | Create a symbolic link |
+
+### Examples
+
+1. To create a symbolic link:
+   ```sh
+   ln -s /path/to/target /path/to/linkname
+   ```
+
+## Compression
+
+- `gzip`: Unix compression program, `.gz` is GNU Zip archive.
+- `gunzip`: To uncompress `.gz` file.
+
+| Command          | Description             |
+| ---------------- | ----------------------- |
+| `gzip file`      | Compress a file         |
+| `gunzip file.gz` | Uncompress a `.gz` file |
+
+### Examples
+
+1. To compress a file:
+
+   ```sh
+   gzip filename
+   ```
+
+2. To uncompress a file:
+   ```sh
+   gunzip filename.gz
+   ```
+
+## Archiving
+
+- `tar`: Create an archive.
+- `tar -cvf archive.tar file1 file2 ...`: Create a tar archive.
+- Usually `.tar` suffix.
+- To unpack: `tar -xvf archive.tar`.
+
+| Command                      | Description          |
+| ---------------------------- | -------------------- |
+| `tar -cvf archive.tar files` | Create a tar archive |
+| `tar -xvf archive.tar`       | Unpack a tar archive |
+
+### Examples
+
+1. To create a tar archive:
+
+   ```sh
+   tar -cvf archive.tar file1 file2
+   ```
+
+2. To unpack a tar archive:
+   ```sh
+   tar -xvf archive.tar
+   ```
