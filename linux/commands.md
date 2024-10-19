@@ -273,3 +273,64 @@
    ```sh
    sudo fdisk /dev/sda
    ```
+
+## Mounting a Filesystem
+
+- The process of attaching a filesystem to a running system is called mounting.
+- When the system boots, the kernel reads some configuration data and mounts the root (`/`) based on the data.
+
+### Requirements to Mount a Filesystem
+
+- Filesystem's device, location, or identifier.
+- Filesystem type.
+- The mount-point, a place where the filesystem will be attached.
+
+| Command                           | Description                                                       |
+| --------------------------------- | ----------------------------------------------------------------- |
+| `mount`                           | Show current filesystem status                                    |
+| `mount -t type device mountpoint` | Manually mount a filesystem                                       |
+| `umount mountpoint`               | Unmount a filesystem                                              |
+| `blkid`                           | View a list of devices and the corresponding filesystem and UUIDs |
+| `df`                              | View utilization of mounted filesystems                           |
+| `du`                              | Estimate disk usage of files and directories                      |
+
+### Examples
+
+1. To show the current filesystem status:
+
+   ```sh
+   mount
+   ```
+
+2. To manually mount a filesystem:
+
+   ```sh
+   sudo mount -t ext4 /dev/sda1 /mnt
+   ```
+
+3. To unmount a filesystem:
+
+   ```sh
+   sudo umount /mnt
+   ```
+
+4. To view a list of devices and their corresponding filesystem and UUIDs:
+
+   ```sh
+   blkid
+   ```
+
+5. To view the utilization of mounted filesystems:
+
+   ```sh
+   df -h
+   ```
+
+6. To estimate disk usage of files and directories:
+   ```sh
+   du -sh /path/to/directory
+   ```
+
+### Mounting at Boot Time
+
+- To mount a filesystem at boot time, Linux systems keep a permanent list of filesystems and options in `/etc/fstab`.
