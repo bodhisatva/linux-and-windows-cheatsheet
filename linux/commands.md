@@ -114,3 +114,18 @@
 | Command  | Description                 |
 | -------- | --------------------------- |
 | `who -r` | Checks the current runlevel |
+
+## Shutdown
+
+- Init also controls how the system shuts down and reboots.
+- A proper way to shut down a Linux machine is to use the `shutdown` command.
+- `shutdown -h now`: Immediately shuts down the system.
+- `shutdown -r +10`: Reboots the system in 10 minutes.
+- Tells the init to begin the shutdown process.
+- On systemd, this means activating the shutdown units.
+- On System V, this means setting the runlevel to 0.
+
+| Command           | Description                       |
+| ----------------- | --------------------------------- |
+| `shutdown -h now` | Immediately shuts down the system |
+| `shutdown -r +10` | Reboots the system in 10 minutes  |
