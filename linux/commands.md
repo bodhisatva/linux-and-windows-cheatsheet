@@ -205,3 +205,35 @@
    ```sh
    kill <PID>
    ```
+
+## Devices
+
+- All Linux devices are located at `/dev`, which is an integral part of the root (`/`).
+- Must be available during the boot process.
+- Device files aren't device drivers (sometimes called nodes).
+
+| Command      | Description                                |
+| ------------ | ------------------------------------------ |
+| `ls -l /dev` | Identify a device and view its permissions |
+
+### Device Types
+
+| Symbol | Description                                                                                                                 |
+| ------ | --------------------------------------------------------------------------------------------------------------------------- |
+| `b`    | Block device: Programs access data in fixed chunks (e.g., hard drives, file systems)                                        |
+| `c`    | Character device: Work with data streams, only read and write operations (e.g., `/dev/null`)                                |
+| `p`    | Pipe: Allow two or more processes to communicate with each other, sending data to another process                           |
+| `s`    | Socket: Facilitate communication between processes, similar to pipe devices but can communicate with many processes at once |
+
+### Examples
+
+1. To identify a device and view its permissions:
+
+   ```sh
+   ls -l /dev
+   ```
+
+2. Example of a character device operation:
+   ```sh
+   echo "Hello" > /dev/null
+   ```
