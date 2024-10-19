@@ -88,3 +88,18 @@
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `man init` | Tells the init version                                                                                                                |
 | `systemd`  | Handles the regular boot process, tracks individual service daemons, and groups together multiple processes associated with a service |
+
+## Systemd Configuration
+
+- Files are spread across the system.
+- `systemctl -p UnitPath show`: Shows the current systemd configuration search path.
+- Unit: Refers to any resource that the system knows how to operate on and manage.
+- `/lib/systemd/system`: A place where installed software puts unit files (set of rules).
+- `/etc/systemd/system`: A place where to modify files.
+
+| Command                      | Description                                         |
+| ---------------------------- | --------------------------------------------------- |
+| `systemctl -p UnitPath show` | Shows the current systemd configuration search path |
+| `systemctl start <unit>`     | Starts a unit                                       |
+| `systemctl stop <unit>`      | Stops a unit                                        |
+| `systemctl restart <unit>`   | Restarts a unit                                     |
