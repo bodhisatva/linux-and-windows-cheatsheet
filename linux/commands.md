@@ -75,3 +75,16 @@
 | `efibootmgr` | Shows info if the system uses BIOS or UEFI (`dmesg \| grep "EFI v"`) |
 
 - If a list of boot targets is shown, then the system uses UEFI.
+
+## Init
+
+- Starts and stops the essential service processes on the system.
+- The standard init implementation is `systemd`.
+- `man init`: Tells the init version.
+- `systemd` is one of the newest init implementations.
+- Handles the regular boot process, can track individual service daemons, and group together multiple processes associated with a service.
+
+| Command    | Description                                                                                                                           |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `man init` | Tells the init version                                                                                                                |
+| `systemd`  | Handles the regular boot process, tracks individual service daemons, and groups together multiple processes associated with a service |
