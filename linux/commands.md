@@ -26,3 +26,15 @@
 | `kill`  | Terminates processes                                               |
 | `top`   | Displays real-time system information                              |
 | `man`   | Displays the manual for a command                                  |
+
+## APT Toolset
+
+- A package manager to retrieve and install package dependencies from repositories.
+- Uses `dpkg` to install, upgrade, and remove packages.
+
+| Command       | Description                         |
+| ------------- | ----------------------------------- |
+| `apt install` | Install a package                   |
+| `apt update`  | Update package lists                |
+| `apt search`  | Search for a package by name        |
+| `apt show`    | Display information about a package |
