@@ -63,3 +63,15 @@
   ```sh
   sudo hostname new_name
   ```
+
+## UEFI
+
+- BIOS is limited, and a replacement called **Extensible Firmware Interface (EFI)** was developed.
+- The current standard is **Unified EFI (UEFI)**.
+- Booting is different on **UEFI** compared to **MBR**.
+
+| Command      | Description                                                          |
+| ------------ | -------------------------------------------------------------------- |
+| `efibootmgr` | Shows info if the system uses BIOS or UEFI (`dmesg \| grep "EFI v"`) |
+
+- If a list of boot targets is shown, then the system uses UEFI.
