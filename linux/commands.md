@@ -38,3 +38,28 @@
 | `apt update`  | Update package lists                |
 | `apt search`  | Search for a package by name        |
 | `apt show`    | Display information about a package |
+
+## Hardware Settings
+
+| Command       | Description                                                           |
+| ------------- | --------------------------------------------------------------------- |
+| `uname`       | Print info about the system                                           |
+| `uname -m`    | Machine hardware name                                                 |
+| `uname -n`    | Network hostname                                                      |
+| `hostname`    | Hostname (with sudo can create a new transient hostname)              |
+| `hostnamectl` | Control the system hostname                                           |
+| `lshw`        | List all information about hardware (install with `apt install lshw`) |
+| `lscpu`       | Display information about the CPU architecture                        |
+| `lsusb`       | List USB devices                                                      |
+| `inxi`        | Display system information                                            |
+
+- There are three types of hostnames:
+
+1. **Static**: Used to initialize the kernel hostname during boot time.
+2. **Transient**: A value received from network configuration.
+3. **Pretty**: A high-level hostname.
+
+- To set a new transient hostname:
+  ```sh
+  sudo hostname new_name
+  ```
