@@ -103,3 +103,14 @@
 | `systemctl start <unit>`     | Starts a unit                                       |
 | `systemctl stop <unit>`      | Stops a unit                                        |
 | `systemctl restart <unit>`   | Restarts a unit                                     |
+
+## System V Init
+
+- A base set of processes of the machine is called its runlevel (0-6).
+- To check runlevel: `who -r`.
+- Runlevels distinguish states between system startup, shutdown, single-user mode, and console mode.
+- Runlevels are becoming a thing of the past.
+
+| Command  | Description                 |
+| -------- | --------------------------- |
+| `who -r` | Checks the current runlevel |
