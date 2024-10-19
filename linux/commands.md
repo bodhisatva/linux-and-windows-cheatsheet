@@ -218,12 +218,12 @@
 
 ### Device Types
 
-| Symbol | Description                                                                                                                 |
-| ------ | --------------------------------------------------------------------------------------------------------------------------- |
-| `b`    | Block device: Programs access data in fixed chunks (e.g., hard drives, file systems)                                        |
-| `c`    | Character device: Work with data streams, only read and write operations (e.g., `/dev/null`)                                |
-| `p`    | Pipe: Allow two or more processes to communicate with each other, sending data to another process                           |
-| `s`    | Socket: Facilitate communication between processes, similar to pipe devices but can communicate with many processes at once |
+| Symbol | Description                                                                                                                     |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| `b`    | **Block device**: Programs access data in fixed chunks (e.g., hard drives, file systems)                                        |
+| `c`    | **Character device**: Work with data streams, only read and write operations (e.g., `/dev/null`)                                |
+| `p`    | **Pipe**: Allow two or more processes to communicate with each other, sending data to another process                           |
+| `s`    | **Socket**: Facilitate communication between processes, similar to pipe devices but can communicate with many processes at once |
 
 ### Examples
 
@@ -236,4 +236,40 @@
 2. Example of a character device operation:
    ```sh
    echo "Hello" > /dev/null
+   ```
+
+## Partition Table
+
+- Most newer systems use Globally Unique Identifier Partition Table (GPT).
+- Some Linux partitioning tools:
+
+| Tool      | Description                                      |
+| --------- | ------------------------------------------------ |
+| `parted`  | A text-based tool that supports both MBR and GPT |
+| `gparted` | A graphical version of parted                    |
+| `fdisk`   | Traditional text-based Linux partitioning tool   |
+
+### Examples
+
+1. To view the system partition table using `parted`:
+
+   ```sh
+   parted -l
+   ```
+
+2. To start `parted` and interactively manage partitions:
+
+   ```sh
+   sudo parted /dev/sda
+   ```
+
+3. To start `gparted` (requires a graphical environment):
+
+   ```sh
+   sudo gparted
+   ```
+
+4. To manage partitions using `fdisk`:
+   ```sh
+   sudo fdisk /dev/sda
    ```
