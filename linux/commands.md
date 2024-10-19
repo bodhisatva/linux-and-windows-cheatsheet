@@ -173,3 +173,35 @@
    ```sh
    grep 'a.c' filename
    ```
+
+## Process Management
+
+- Every process is a running program.
+- Each process on the system has a numeric process ID (PID).
+
+- Background process: When running a command from the shell, you don't get the shell prompt back until it finishes executing.
+- With `&` you can detach the process and put it in the background.
+
+| Command      | Description                                           |
+| ------------ | ----------------------------------------------------- |
+| `kill <PID>` | Terminates a process                                  |
+| `ctrl + c`   | Terminates the current process                        |
+| `top`        | Lists processes, most active ones at the top          |
+| `M`          | Sorts by memory usage (within `top` command)          |
+| `T`          | Sorts by total CPU usage (within `top` command)       |
+| `u`          | Displays only user's processes (within `top` command) |
+| `q`          | Quit the `top` command                                |
+
+### Examples
+
+1. To run a command in the background:
+
+   ```sh
+   command &
+   ```
+
+2. To terminate a process with a specific PID:
+
+   ```sh
+   kill <PID>
+   ```
