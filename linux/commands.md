@@ -129,3 +129,47 @@
 | ----------------- | --------------------------------- |
 | `shutdown -h now` | Immediately shuts down the system |
 | `shutdown -r +10` | Reboots the system in 10 minutes  |
+
+## Grep
+
+- Prints the lines that match an expression.
+- Understands regular expressions.
+
+| Symbol | Description                                                 |
+| ------ | ----------------------------------------------------------- |
+| `^`    | Matches the beginning of the line                           |
+| `$`    | Matches the end of the line                                 |
+| `*`    | Matches zero or more occurrences of the previous character  |
+| `+`    | Matches one or more occurrence(s) of the previous character |
+| `.`    | Matches exactly one character                               |
+
+### Examples
+
+1. To find lines that start with "text" in a file:
+
+   ```sh
+   grep '^text' filename
+   ```
+
+2. To find lines that end with "text" in a file:
+
+   ```sh
+   grep 'text$' filename
+   ```
+
+3. To find lines that contain zero or more occurrences of "a" followed by "bc":
+
+   ```sh
+   grep 'a*bc' filename
+   ```
+
+4. To find lines that contain one or more occurrences of "a" followed by "bc":
+
+   ```sh
+   grep 'a+bc' filename
+   ```
+
+5. To find lines that contain "a" followed by any character and then "c":
+   ```sh
+   grep 'a.c' filename
+   ```
