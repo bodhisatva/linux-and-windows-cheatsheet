@@ -1,4 +1,86 @@
-# Linux Basics commands
+# Linux Basics
+
+Metropolia Linux-Basics course notes.
+
+## Typical Directory Structure in Debian Linux
+
+```
+/
+├── bin
+├── boot
+├── dev
+├── etc
+├── home
+├── lib
+├── media
+├── mnt
+├── opt
+├── proc
+├── root
+├── run
+├── sbin
+├── srv
+├── sys
+├── tmp
+├── usr
+│   ├── bin
+│   ├── lib
+│   ├── local
+│   ├── sbin
+│   └── share
+└── var
+    ├── cache
+    ├── lib
+    ├── log
+    ├── mail
+    ├── run
+    ├── spool
+    └── tmp
+```
+
+| Directory | Description                                                                                                    |
+| --------- | -------------------------------------------------------------------------------------------------------------- |
+| `/`       | The root directory, the top level of the filesystem hierarchy.                                                 |
+| `/bin`    | Essential command binaries that need to be available in single-user mode; for all users (e.g., `ls`, `cp`).    |
+| `/boot`   | Static files of the boot loader (e.g., kernels, initrd).                                                       |
+| `/dev`    | Device files (e.g., `/dev/sda1` for the first partition on the first hard drive).                              |
+| `/etc`    | Host-specific system-wide configuration files (e.g., `/etc/passwd` for user accounts).                         |
+| `/home`   | User home directories (e.g., `/home/username`).                                                                |
+| `/lib`    | Essential shared libraries and kernel modules.                                                                 |
+| `/media`  | Mount points for removable media (e.g., `/media/cdrom` for a CD-ROM).                                          |
+| `/mnt`    | Mount point for temporarily mounting filesystems.                                                              |
+| `/opt`    | Optional application software packages.                                                                        |
+| `/proc`   | Virtual filesystem providing process and kernel information as files (e.g., `/proc/uptime`).                   |
+| `/root`   | Home directory for the root user.                                                                              |
+| `/run`    | Runtime variable data (e.g., PID files, sockets).                                                              |
+| `/sbin`   | Essential system binaries (e.g., `fsck`, `reboot`).                                                            |
+| `/srv`    | Data for services provided by the system (e.g., web server data).                                              |
+| `/sys`    | Virtual filesystem providing system information.                                                               |
+| `/tmp`    | Temporary files (cleared on reboot).                                                                           |
+| `/usr`    | Secondary hierarchy for read-only user data; contains the majority of (multi-)user utilities and applications. |
+| `/var`    | Variable data files (e.g., logs, spool files).                                                                 |
+
+### Subdirectories in `/usr`
+
+| Directory    | Description                                                                   |
+| ------------ | ----------------------------------------------------------------------------- |
+| `/usr/bin`   | Non-essential command binaries (not needed in single-user mode).              |
+| `/usr/lib`   | Libraries for `/usr/bin` and `/usr/sbin`.                                     |
+| `/usr/local` | Tertiary hierarchy for local data specific to this host.                      |
+| `/usr/sbin`  | Non-essential system binaries (e.g., `daemon` programs for various services). |
+| `/usr/share` | Architecture-independent data (e.g., documentation, icons).                   |
+
+### Subdirectories in `/var`
+
+| Directory    | Description                                                 |
+| ------------ | ----------------------------------------------------------- |
+| `/var/cache` | Application cache data.                                     |
+| `/var/lib`   | State information.                                          |
+| `/var/log`   | Log files.                                                  |
+| `/var/mail`  | User mailbox files.                                         |
+| `/var/run`   | Information about the running system since the last boot.   |
+| `/var/spool` | Spool for tasks waiting to be processed (e.g., print jobs). |
+| `/var/tmp`   | Temporary files preserved between reboots.                  |
 
 ## APT Toolset
 
