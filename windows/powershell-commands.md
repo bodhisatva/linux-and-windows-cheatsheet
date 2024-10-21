@@ -48,3 +48,17 @@
 | Assign multiple variables in one line | `$var1 = "Hello"; $var2 = "World"; $var3 = 42`          |
 | Flip (swap) variables                 | `$temp = $a; $a = $b; $b = $temp`                       |
 | Strongly typed variable               | `[int]$myInt = 42; [string]$myString = "Hello, World!"` |
+
+## PowerShell Arrays and Objects
+
+| Description                  | Example                                                         |
+| ---------------------------- | --------------------------------------------------------------- |
+| Array of strings             | `$array = @("one", "two", "three")`                             |
+| Empty array                  | `$emptyArray = @()`                                             |
+| Sixth array element          | `$sixthElement = $array[5]`                                     |
+| Last three array elements    | `$lastThreeElements = $array[-3..-1]`                           |
+| Elements at index 1, 4, 6-9  | `$selectedElements = $array[1, 4, 6..9]`                        |
+| Add to array item value      | `$array += "four"`                                              |
+| Two arrays into single array | `$combinedArray = $array1 + $array2`                            |
+| Create custom object         | `$person = [PSCustomObject]@{FirstName="John"; LastName="Doe"}` |
+| Date property of object      | `$currentDate = (Get-Date).Date`                                |
