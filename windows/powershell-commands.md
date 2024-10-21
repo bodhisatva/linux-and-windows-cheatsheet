@@ -1,7 +1,5 @@
 # PowerShell Commands Cheatsheet
 
-# PowerShell Commands
-
 | Command               | Description                                                                               | Example                                                                | Documentation                                                                                                               |
 | --------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | `Get-Command`         | Gets all commands                                                                         | `Get-Command`                                                          | [Get-Command](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-command)                     |
@@ -44,33 +42,33 @@
 
 ## PowerShell Variable Assignments
 
-| Description                           | Example                                                 | Documentation                                                                                                                            |
-| ------------------------------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Assign a variable                     | `$myVariable = "Hello, World!"`                         | [about Variables](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-variables?view=powershell-7.1) |
-| Assign multiple variables in one line | `$var1 = "Hello"; $var2 = "World"; $var3 = 42`          | [about Variables](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-variables?view=powershell-7.1) |
-| Flip (swap) variables                 | `$temp = $a; $a = $b; $b = $temp`                       | [about Variables](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-variables?view=powershell-7.1) |
-| Strongly typed variable               | `[int]$myInt = 42; [string]$myString = "Hello, World!"` | [about Variables](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-variables?view=powershell-7.1) |
+| Description                           | Example                                                 | Documentation                                                                                                                                               |
+| ------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Assign a variable                     | `$myVariable = "Hello, World!"`                         | [Variables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-7.4#working-with-variables) |
+| Assign multiple variables in one line | `$a, $b = 0, 1` or `$a, $b = 'a', 'b'`                  | [Variables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-7.4)                        |
+| Flip (swap) variables                 | `$temp = $a; $a = $b; $b = $temp`                       | [Variables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-7.4)                        |
+| Strongly typed variable               | `[int]$myInt = 42; [string]$myString = "Hello, World!"` |                                                                                                                                                             |
 
 ## PowerShell Arrays and Objects
 
-| Description                  | Example                                                         | Documentation                                                                                                                         |
-| ---------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Array of strings             | `$array = @("one", "two", "three")`                             | [Arrays](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.1)          |
-| Empty array                  | `$emptyArray = @()`                                             | [Arrays](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.1)          |
-| Sixth array element          | `$sixthElement = $array[5]`                                     | [Arrays](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.1)          |
-| Last three array elements    | `$lastThreeElements = $array[-3..-1]`                           | [Arrays](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.1)          |
-| Elements at index 1, 4, 6-9  | `$selectedElements = $array[1, 4, 6..9]`                        | [Arrays](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.1)          |
-| Add to array item value      | `$array += "four"`                                              | [Arrays](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.1)          |
-| Two arrays into single array | `$combinedArray = $array1 + $array2`                            | [Arrays](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.1)          |
-| Create custom object         | `$person = [PSCustomObject]@{FirstName="John"; LastName="Doe"}` | [Custom Objects](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-objects?view=powershell-7.1) |
-| Date property of object      | `$currentDate = (Get-Date).Date`                                | [Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)              |
+| Description                  | Example                                                         | Documentation                                                                                                                                           |
+| ---------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Array of strings             | `$array = @("one", "two", "three")`                             | [Arrays](https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.4#create-an-array)           |
+| Empty array                  | `$emptyArray = @()`                                             | [Arrays](https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.4#create-an-array)           |
+| Sixth array element          | `$sixthElement = $array[5]`                                     | [Arrays](https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.4#accessing-items)           |
+| Last three array elements    | `$lastThreeElements = $array[-3..-1]`                           | [Arrays](https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.4#special-index-tricks)      |
+| Elements at index 1, 4, 6-9  | `$selectedElements = $array[1, 4, 6..9]`                        | [Arrays](https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.4#accessing-items)           |
+| Add to array item value      | `$array += "four"`                                              | [Arrays](https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.4#adding-to-arrays)          |
+| Two arrays into single array | `$combinedArray = $array1 + $array2`                            | [Arrays](https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.4#array-addition)            |
+| Create custom object         | `$person = [PSCustomObject]@{FirstName="John"; LastName="Doe"}` | [Custom Objects](https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.4#arrays-of-objects) |
+| Date property of object      | `$currentDate = (Get-Date).Date`                                | [Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)                                |
 
 ## PowerShell Flow Control
 
-| Description       | Example                                                | Documentation                                                                                                                                |
-| ----------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| If-Else Statement | `if ($condition) { } elseif ($condition) { } else { }` | [If-Else Statement](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-if?view=powershell-7.1)          |
-| While Loop        | `while ($condition) { }`                               | [While Loop](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-while?view=powershell-7.1)              |
-| For Loop          | `for ($i=0; $i -lt 10; $i++) { }`                      | [For Loop](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-for?view=powershell-7.1)                  |
-| Foreach Loop      | `foreach ($file in Get-ChildItem C:\) { $file.Name }`  | [Foreach Loop](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-foreach?view=powershell-7.1)          |
-| Pipeline Foreach  | `1..10 \| ForEach-Object { $_ }`                       | [ForEach-Object](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-foreach-object?view=powershell-7.1) |
+| Description       | Example                                                | Documentation                                                                                                                         |
+| ----------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| If-Else Statement | `if ($condition) { } elseif ($condition) { } else { }` | [If-Else Statement](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-if?view=powershell-7.1)   |
+| While Loop        | `while ($condition) { }`                               | [While Loop](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_while?view=powershell-7.4)     |
+| For Loop          | `for ($i=0; $i -lt 10; $i++) { }`                      | [For Loop](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_for?view=powershell-7.4)         |
+| Foreach Loop      | `foreach ($file in Get-ChildItem C:\) { $file.Name }`  | [Foreach Loop](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_foreach?view=powershell-7.4) |
+| Pipeline Foreach  | `1..10 \| ForEach-Object { $_ }`                       |                                                                                                                                       |
