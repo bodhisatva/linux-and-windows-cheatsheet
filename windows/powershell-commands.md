@@ -39,3 +39,12 @@
 | `Stop-Job`            | Stops a PowerShell background job                                                         | `Stop-Job -Id 1`                                                       |
 | `Receive-Job`         | Gets the results of a PowerShell background job                                           | `Receive-Job -Id 1`                                                    |
 | `Remove-Job`          | Deletes a PowerShell background job                                                       | `Remove-Job -Id 1`                                                     |
+
+## PowerShell Variable Assignments
+
+| Description                           | Example                                                 |
+| ------------------------------------- | ------------------------------------------------------- |
+| Assign a variable                     | `$myVariable = "Hello, World!"`                         |
+| Assign multiple variables in one line | `$var1 = "Hello"; $var2 = "World"; $var3 = 42`          |
+| Flip (swap) variables                 | `$temp = $a; $a = $b; $b = $temp`                       |
+| Strongly typed variable               | `[int]$myInt = 42; [string]$myString = "Hello, World!"` |
