@@ -62,3 +62,13 @@
 | Two arrays into single array | `$combinedArray = $array1 + $array2`                            |
 | Create custom object         | `$person = [PSCustomObject]@{FirstName="John"; LastName="Doe"}` |
 | Date property of object      | `$currentDate = (Get-Date).Date`                                |
+
+## PowerShell Flow Control
+
+| Description       | Example                                                |
+| ----------------- | ------------------------------------------------------ |
+| If-Else Statement | `if ($condition) { } elseif ($condition) { } else { }` |
+| While Loop        | `while ($condition) { }`                               |
+| For Loop          | `for ($i=0; $i -lt 10; $i++) { }`                      |
+| Foreach Loop      | `foreach ($file in Get-ChildItem C:\) { $file.Name }`  |
+| Pipeline Foreach  | `1..10 \| ForEach-Object { $_ }`                       |
