@@ -40,7 +40,7 @@
 | `Receive-Job`         | Gets the results of a PowerShell background job                                           | `Receive-Job -Id 1`                                                    | [Receive-Job](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/receive-job)                     |
 | `Remove-Job`          | Deletes a PowerShell background job                                                       | `Remove-Job -Id 1`                                                     | [Remove-Job](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/remove-job)                       |
 
-## PowerShell Variable Assignments
+## Variable Assignments
 
 | Description                           | Example                                                 | Documentation                                                                                                                                               |
 | ------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -49,7 +49,7 @@
 | Flip (swap) variables                 | `$temp = $a; $a = $b; $b = $temp`                       | [Variables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-7.4)                        |
 | Strongly typed variable               | `[int]$myInt = 42; [string]$myString = "Hello, World!"` |                                                                                                                                                             |
 
-## PowerShell Arrays and Objects
+## Arrays and Objects
 
 | Description                  | Example                                                         | Documentation                                                                                                                                           |
 | ---------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -63,7 +63,7 @@
 | Create custom object         | `$person = [PSCustomObject]@{FirstName="John"; LastName="Doe"}` | [Custom Objects](https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.4#arrays-of-objects) |
 | Date property of object      | `$currentDate = (Get-Date).Date`                                | [Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)                                |
 
-## PowerShell Flow Control
+## Flow Control
 
 | Description       | Example                                                | Documentation                                                                                                                         |
 | ----------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
@@ -72,3 +72,48 @@
 | For Loop          | `for ($i=0; $i -lt 10; $i++) { }`                      | [For Loop](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_for?view=powershell-7.4)         |
 | Foreach Loop      | `foreach ($file in Get-ChildItem C:\) { $file.Name }`  | [Foreach Loop](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_foreach?view=powershell-7.4) |
 | Pipeline Foreach  | `1..10 \| ForEach-Object { $_ }`                       |                                                                                                                                       |
+
+## Command Aliases Cheatsheet
+
+| Command            | Alias  | Example                                                            | Documentation                                                                                                                   |
+| ------------------ | ------ | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| `Get-Command`      | `gcm`  | `gcm`                                                              | [Get-Command](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-command)                         |
+| `Foreach-Object`   | `%`    | `1..10 \| % { $_ * 2 }`                                            | [Foreach-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/foreach-object)                   |
+| `Sort-Object`      | `sort` | `Get-Process \| sort -Property CPU`                                | [Sort-Object](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/sort-object?view=powershell-7.4) |
+| `Where-Object`     | `?`    | `Get-Process \| ? { $_.CPU -gt 100 }`                              | [Where-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/where-object)                       |
+| `Compare-Object`   | `diff` | `diff -ReferenceObject $a -DifferenceObject $b`                    | [Compare-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/compare-object)                |
+| `Get-ChildItem`    | `gci`  | `gci -Path "C:\temp"`                                              | [Get-ChildItem](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem)               |
+| `Get-Item`         | `gi`   | `gi -Path "C:\temp\file.txt"`                                      | [Get-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-item)                         |
+| `Copy-Item`        | `cp`   | `cp -Path "C:\temp\file.txt" -Destination "C:\backup\file.txt"`    | [Copy-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/copy-item)                       |
+| `Move-Item`        | `mv`   | `mv -Path "C:\temp\file.txt" -Destination "C:\backup\file.txt"`    | [Move-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/move-item)                       |
+| `Remove-Item`      | `rm`   | `rm -Path "C:\temp\file.txt"`                                      | [Remove-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-item)                   |
+| `Rename-Item`      | `rni`  | `rni -Path "C:\temp\file.txt" -NewName "newfile.txt"`              | [Rename-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/rename-item)                   |
+| `Format-Table`     | `ft`   | `Get-Process \| ft -Property Name, CPU`                            | [Format-Table](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/format-table)                    |
+| `Format-List`      | `fl`   | `Get-Process \| fl -Property Name, CPU`                            | [Format-List](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/format-list)                      |
+| `Get-CimInstance`  | `gcim` | `gcim -ClassName Win32_OperatingSystem`                            | [Get-CimInstance](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-ciminstance)                                |
+| `Get-Content`      | `gc`   | `gc -Path "C:\temp\file.txt"`                                      | [Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content)                   |
+| `Set-Content`      | `sc`   | `sc -Path "C:\temp\file.txt" -Value "New content"`                 | [Set-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-content)                   |
+| `Get-History`      | `ghy`  | `ghy`                                                              | [Get-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-history)                         |
+| `Invoke-History`   | `ihy`  | `ihy -Id 1`                                                        | [Invoke-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-history)                   |
+| `Get-ItemProperty` | `gp`   | `gp -Path "HKLM:\Software\Microsoft" -Name "Version"`              | [Get-ItemProperty](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-itemproperty)         |
+| `Set-ItemProperty` | `sp`   | `sp -Path "HKLM:\Software\Microsoft" -Name "Version" -Value "1.0"` | [Set-ItemProperty](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-itemproperty)         |
+| `Get-Location`     | `gl`   | `gl`                                                               | [Get-Location](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-location)                 |
+| `Get-Member`       | `gm`   | `"Hello" \| gm`                                                    | [Get-Member](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-member)                        |
+| `Select-String`    | `sls`  | `sls -Pattern "Hello" -Path "C:\temp\file.txt"`                    | [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string)                  |
+| `Set-Location`     | `sl`   | `sl -Path "C:\temp"`                                               | [Set-Location](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-location)                 |
+| `Clear-Host`       | `cls`  | `cls`                                                              | [Clear-Host](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/clear-host?view=powershell-7.4)      |
+
+## Operators Cheatsheet
+
+| Description                         | Example                   | Documentation                                                                                                                                                                  |
+| ----------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Assign values to variable           | `$a = 5`                  |                                                                                                                                                                                |
+| Connect expressions / statements    | `$a -eq 5 -and $b -eq 10` | [Logical Operators](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logical_operators?view=powershell-7.4)                           |
+| Equal, not equal                    | `$a -eq 5`, `$a -ne 5`    | [Logical Operators](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.4#equality-operators)     |
+| Greater than, greater than or equal | `$a -gt 5`, `$a -ge 5`    | [Comparison Operators](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.4#-gt--ge--lt-and--le) |
+| Less than, less than or equal       | `$a -lt 5`, `$a -le 5`    | [Comparison Operators](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.4#-gt--ge--lt-and--le) |
+| Replace string                      | `"Hi" -replace "H", "P"`  |                                                                                                                                                                                |
+| Regular expression match            | `"Hello" -match "H.*o"`   | [Regular Expression](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.4#character-literals)     |
+| Wildcard matching                   | `"Hello" -like "H*o"`     | [Wildcard](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.4)                                            |
+| Check if value in array             | `5 -in $array`            |                                                                                                                                                                                |
+| Reverse of contains, notcontains    | `5 -notin $array`         |                                                                                                                                                                                |
