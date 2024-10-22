@@ -73,7 +73,7 @@
 | Foreach Loop      | `foreach ($file in Get-ChildItem C:\) { $file.Name }`  | [Foreach Loop](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_foreach?view=powershell-7.4) |
 | Pipeline Foreach  | `1..10 \| ForEach-Object { $_ }`                       |                                                                                                                                       |
 
-## Command Aliases Cheatsheet
+## Command Aliases
 
 | Command            | Alias  | Example                                                            | Documentation                                                                                                                   |
 | ------------------ | ------ | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -103,7 +103,7 @@
 | `Set-Location`     | `sl`   | `sl -Path "C:\temp"`                                               | [Set-Location](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-location)                 |
 | `Clear-Host`       | `cls`  | `cls`                                                              | [Clear-Host](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/clear-host?view=powershell-7.4)      |
 
-## Operators Cheatsheet
+## Operators
 
 | Description                         | Example                   | Documentation                                                                                                                                                                  |
 | ----------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
