@@ -1,22 +1,22 @@
 # Azure
 
-Azure ClI setup on macOS and basic commands with example use cases.
+Azure CLI setup on macOS and basic commands with example use cases.
 
 ## Azure CLI installation and setup
 
-Install Azure CLI with Homebrew.
+Install Azure CLI with Homebrew:
 
 ```sh
 brew update && brew install azure-cli
 ```
 
-Open Azure CLI.
+Open Azure CLI:
 
 ```sh
 az
 ```
 
-You need to sign in to your Azure account.
+You need to sign in to your Azure account:
 
 ```sh
 az login
@@ -44,7 +44,7 @@ List all resource groups:
 az group list
 ```
 
-If you don't already have a resource group, crete one using command:
+If you don't already have a resource group, create one using command:
 
 ```bash
 az group create --name <resource_name> --location <resource_location>
