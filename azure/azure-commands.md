@@ -28,13 +28,14 @@ After signing in, return to the terminal.
 
 ## CLI Basic Commands
 
-| Command                           | Description                                                                                       |
-| --------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `az version`                      | Displays the version of the Azure CLI installed on your system.                                   |
-| `az account show`                 | Shows details of the currently active Azure subscription.                                         |
-| `az account list --output table`  | Lists all subscriptions associated with your account in a table format.                           |
-| `az config set core.output=jsonc` | Sets the default output format to JSON with colorization (jsonc).                                 |
-| `az interactive`                  | Launches the Azure CLI in interactive mode, providing auto-completion and context-sensitive help. |
+| Command                                                        | Description                                                                                       |
+| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `az version`                                                   | Displays the version of the Azure CLI installed on your system.                                   |
+| `az account show`                                              | Shows details of the currently active Azure subscription.                                         |
+| `az account list --output table`                               | Lists all subscriptions associated with your account in a table format.                           |
+| `az account list-locations --output table \| grep -i <region>` | List all available regions                                                                        |
+| `az config set core.output=jsonc`                              | Sets the default output format to JSON with colorization (jsonc).                                 |
+| `az interactive`                                               | Launches the Azure CLI in interactive mode, providing auto-completion and context-sensitive help. |
 
 ### Creating and deleting a resource group
 
@@ -81,7 +82,7 @@ Create a storage account with a unique name:
 ```bash
 az storage account create --resource-group <resource_group_name> --name <store_name> --location <azure_region> --sku <replication_strategy> --kind <storage_account_type>
 
-#az storage account create --resource-group testing-cli-group --name testingclistorage --location swedencentral --sku Standard_LRS --kind StorageV2
+# az storage account create --resource-group testing-cli-group --name testingclistorage --location swedencentral --sku Standard_LRS --kind StorageV2
 ```
 
 Creating a Blob container requires authentication. To retrieve the storage account key:
