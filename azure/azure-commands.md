@@ -77,6 +77,12 @@ List all resources in the current subscription:
 az resource list
 ```
 
+To list only storage accounts and select their names, locations and resource groups:
+
+```bash
+az storage account list --query "[].{Name:name, Location:primaryLocation, ResourceGroup:resourceGroup}" --output table
+```
+
 Create a storage account with a unique name:
 
 ```bash
