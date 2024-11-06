@@ -100,3 +100,12 @@ az storage container create --name <storage_container_name> --account-name <stor
 
 # az storage container create --name clicontainername --account-name testingclistorage --account-key $STORAGE_KEY
 ```
+
+### Creating a virtual network
+
+Virtual network must be created in the same region where the VM is created and should have an IP range different from, for example, used in a home network. Virtual network contains an IP address range for outgoing resources.
+
+```bash
+az network create --resource-group <resource-group-name> --address-prefix 10.0.0.0/16 --subnet-name <subnet-name> --subnet-prefix 10.0.1.0/24
+
+```
